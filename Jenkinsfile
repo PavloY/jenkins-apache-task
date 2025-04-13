@@ -2,15 +2,6 @@ pipeline {
     agent any
 
     stages {
-        stage('Install Apache') {
-            steps {
-                sh '''
-                    apt-get update
-                    apt-get install -y apache2
-                '''
-            }
-        }
-
         stage('Check Apache logs for 4xx/5xx') {
             steps {
                 sh '''
